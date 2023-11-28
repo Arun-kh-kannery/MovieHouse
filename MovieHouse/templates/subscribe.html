@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style="height:300px; width:100%; background-color:#3c4556">
+    <div style="position:absolute; top:110px;left:0px;right:0px; height:50px; width:100%; background-color:#61c467">
+        <h1 class="text-center text-light" style="font-family: 'Roboto Slab', serif;"><strong>Subscription plan</strong></h1>
+    </div>
+    <div class="m-4" style="display:flex;flex-wrap:wrap;position:absolute;top:281px;left:120px;">
+        <div style="height:254px; width:350px;border:2px solid black;margin-right:100px;">
+            <div style="font-family: 'Roboto Slab', serif;">
+               <h2 class="text-light text-center mt-2 " style="padding-bottom:12px;border-bottom:1px solid white;"><strong>20 Days Free Trial</strong></h2>
+                <ul style="font-size:20px;">
+                    <li>300+movies</li>
+                    <li>200+Series</li>
+                    <li>20 Days Free Trial </li>
+                    <li>1 gb download space </li>
+                </ul>
+                {% if not f %}
+                <div class="mb-1">
+                    <a class="btn btn-lg"  href="{% url 'watch:freetrial' %}"  style="width:100%;background-color:#61c467;">Get free Trial</a>
+                </div>
+                {% else %}
+                <div class="mb-1">
+                    <a class="btn btn-lg btn-secondary"    style="width:100%;">free Trial activated</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        <div style="height:254px; width:350px;border:2px solid;margin-right:100px;">
+             <div style="font-family: 'Roboto Slab', serif;">
+               <h2 class="text-light text-center mt-2 " style="padding-bottom:12px;border-bottom:1px solid white;"><strong>49 <i class="fa-solid fa-indian-rupee-sign fa-sm" style="color:white;font-size:22px;"></i>/month</strong></h2>
+                <ul style="font-size:20px;">
+                    <li>300+movies</li>
+                    <li>200+Series</li>
+                    <li>Premium Membership </li>
+                    <li>10 gb download space </li>
+                </ul>
+                <div class="">
+                    <a class="btn  btn-lg " onclick="f()"  href="{% url 'watch:subscription' %}" style="width:100%;background-color:#61c467;">49 <i class="fa-solid fa-indian-rupee-sign fa-sm" style="color:black;font-size:15px;"></i>/month</a>
+                </div>
+            </div>
+        </div>
+        <div style="height:254px; width:350px;border:2px solid black;">
+             <div style="font-family: 'Roboto Slab', serif;">
+               <h2 class="text-light text-center mt-2 " style="padding-bottom:12px;border-bottom:1px solid white;"><strong>500 <i class="fa-solid fa-indian-rupee-sign fa-sm" style="color:white;font-size:22px;"></i>/annual</strong></h2>
+                <ul style="font-size:20px;">
+                    <li>300+movies</li>
+                    <li>200+Series</li>
+                    <li>Elite Membership </li>
+                    <li>100 gb download space </li>
+                </ul>
+                <div class="mb-1">
+                    <a class="btn  btn-lg  " href="{% url 'watch:subscription2' %}" style="width:100%;background-color:#61c467;">500 <i class="fa-solid fa-indian-rupee-sign fa-sm" style="black:white;font-size:15px;"></i>/annual</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

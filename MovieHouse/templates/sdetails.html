@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <div>
+        <div class="cover">
+             <div>
+             <img src="{{s.image.url}}" height="669px" width="100%">
+            </div>
+        </div>
+        <div class="cover-text text-light fw-light">
+            <h2 class="ms-5 " style="font-family: 'Merriweather', serif;"><strong>{{s.sname}}</strong></h2>
+            <p class="fs-5 ms-2 mt-3 "><i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>IMDb {{s.rating_outof_10}}/10 </span>
+              &nbsp; <i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>{{s.language}}</span>
+             &nbsp; <i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span> Episodes : {{s.no_of_episodes}}</span></p>
+            <p class="fs-5 mt-1 ms-2">{{s.description}}</p>
+            <div class="mt-5 ms-5">
+                <a href="{% url 'series:episodes' s.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-play fa-sm" style="color:black;"></i> Watch now</a>
+                &nbsp; <a href="{% url 'watch:swatchlist' s.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-plus 1" style="color:black;"></i> add to watchlist </a>
+
+            </div>
+        </div>
+ </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div style="margin-bottom:50px;">
+    <div>
+        <div class="cover">
+            <img src="{{m.cover.url}}" height="669px" width="100%">
+        </div>
+        <div class="cover-text text-light fw-light">
+            <h2 class="ms-5 " style="font-family: 'Merriweather', serif;"><strong>{{m.mname}}<span class="fs-4">({{m.language}})</span></strong></h2>
+            <p class="fs-5 ms-2 mt-3 "><i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>IMDb {{m.rating_outof_10}}/10 </span>
+              &nbsp; <i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>{{m.language}}</span>   &nbsp; <i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>{{m.year}}</span>
+             &nbsp; <i class="fa-solid fa-circle fa-sm " style="color:orange;font-size:6px;"></i> <span>{{m.genere}}</span></p>
+            <p class="fs-5 mt-1 ms-2">{{m.description}}</p>
+            {% if m.status == "Coming Soon" %}
+            <h2 class="fs-3 text-center ">Coming Soon</h2>
+            <div class="mt-5 ms-5">
+                <a href="{% url 'movie:watchmovie' m.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-play fa-sm" style="color:black;"></i> Watch Trailer</a>
+                &nbsp; <a href="{% url 'watch:add_to_watchlist' m.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-plus 1" style="color:black;"></i> add to watchlist </a>
+            </div>
+            {% else %}
+             <div class="mt-5 ms-5">
+                <a href="{% url 'movie:watchmovie' m.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-play fa-sm" style="color:black;"></i> Watch now</a>
+                &nbsp; <a href="{% url 'watch:add_to_watchlist' m.id %}" class="btn btn-light btn-lg text-black ms-1 me-1 "><i class="fa-solid fa-plus 1" style="color:black;"></i> add to watchlist </a>
+            </div>
+            {% endif %}
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

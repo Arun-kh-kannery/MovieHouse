@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+  <div class="m-5">
+      {% if not m and not s %}
+      <center>
+           <h5 class="fs-3">no result for <span style="color:red">{{q}}</span></h5>
+    </center>
+      {% else %}
+       <center>
+           <h5 class="fs-3">search result for <span style="color:red">{{q}}</span></h5>
+    </center>
+    <div class="ms-5 me-5 mb-5">
+      <div class="row">
+                {% for i in m %}
+                <div class="col-sm-2 mt-1">
+                    <div class="card bg-info m-2">
+                        <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info ">Watch now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+      <div class="row">
+                {% for i in s %}
+                <div class="col-sm-2 mt-1">
+                    <div class="card bg-info m-2">
+                        <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'series:sdetails' i.id %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info ">Watch now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+  </div>
+{% endif %}
+</div>
+{% endblock %}

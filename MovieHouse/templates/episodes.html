@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="ms-5">
+    <div class="mt-1" style="margin-bottom:50px;">
+                <h2><strong>Episodes</strong></h2>
+                <div class="mt-2">
+                    {% for i in range %}
+                    <div  class="mt-2 " style="height:50px; width:50%; border:2px solid blue;border-radius:30px;">
+                        <div class="m-2">
+                            <div class="ms-3 mt-1">
+                                <p><strong>{{s.sname}} episode {{i}} <a  style="margin-left:200px; display:inline;" href="{% url 'series:series' s.id %}" class="btn btn-info mt-2">watch now <i class="fa-solid fa-play fa-sm" style="color:blue;"></i></a></strong></p><p style="display:block;">
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+    </div>
+</div>
+{% endblock %}

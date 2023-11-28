@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="m-3" >
+    <div style="margin-bottom:100px;">
+        <div class="ms-5 me-5">
+            <p class="fs-5 text-danger ms-2"><i class="fa-solid fa-circle fa-sm " style="color:red;font-size:10px;"></i> Trending</p>
+            <div class="row">
+                {% for i in m %}
+                <div class="col-sm-2 mt-1">
+                    <div class="card bg-info m-2">
+                        <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info ">Watch now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="mt-3">
+                 <p class="fs-5 text-danger ms-2"><i class="fa-solid fa-circle fa-sm " style="color: red;font-size:10px;"></i> Action</p>
+                <div class="row">
+                    {% for i in a %}
+                    <div class="col-sm-2 mt-1">
+                        <div class="card bg-danger m-2">
+                            <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-danger  ">Watch now</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+
+            </div>
+             <div class="mt-3">
+                 <p class="fs-5 text-danger ms-2"><i class="fa-solid fa-circle fa-sm " style="color: red;font-size:10px;"></i> Drama</p>
+                <div class="row">
+                    {% for i in b %}
+                    <div class="col-sm-2 mt-1">
+                        <div class="card bg-info m-2">
+                            <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info  ">Watch now</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="mt-3">
+                 <p class="fs-5 text-danger ms-2"><i class="fa-solid fa-circle fa-sm " style="color: red;font-size:10px;"></i> Comedy</p>
+                <div class="row">
+                    {% for i in c %}
+                    <div class="col-sm-2 mt-1">
+                        <div class="card bg-danger m-2">
+                            <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-danger  ">Watch now</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="mt-3">
+                 <p class="fs-5 text-danger ms-1"><i class="fa-solid fa-circle fa-sm " style="color: red;font-size:10px;"></i> Thriller</p>
+                <div class="row">
+                    {% for i in d %}
+                    <div class="col-sm-2 mt-2">
+                        <div class="card bg-info m-2">
+                            <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info  ">Watch now</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

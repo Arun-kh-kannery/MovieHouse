@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div >
+ <video  autoplay controls>
+      <source src="{{s.video.url}}" type="video/mp4">
+      Your browser does not support HTML video.
+ </video>
+  </div>
+{% endblock %}

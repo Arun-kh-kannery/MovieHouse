@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie House</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/a.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Merriweather:wght@700&family=Oswald:wght@500&family=Playfair+Display:ital,wght@1,500&family=Poppins:ital,wght@0,200;0,300;0,900;1,500&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;700&family=Roboto:ital,wght@0,400;1,300;1,400&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:wght@600&family=Poppins:wght@200;300&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:wght@600&family=Poppins:wght@200;300&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab&family=Roboto:ital,wght@0,400;1,300&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:wght@600&family=Poppins:wght@200;300;900&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:wght@600&family=Poppins:ital,wght@0,200;0,300;0,900;1,500&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:ital,wght@1,500&family=Poppins:ital,wght@0,200;0,300;0,900;1,500&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Oswald:wght@500&family=Playfair+Display:ital,wght@1,500&family=Poppins:ital,wght@0,200;0,300;0,900;1,500&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300;1,400&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=DM+Sans:opsz,wght@9..40,300&family=Gabarito:wght@700&family=Inter:wght@300&family=Merriweather:wght@700&family=Oswald:wght@500&family=Playfair+Display:ital,wght@1,500&family=Poppins:ital,wght@0,200;0,300;0,900;1,500&family=Roboto+Condensed:ital,wght@1,600&family=Roboto+Slab:wght@400;600&family=Roboto:ital,wght@0,400;1,300;1,400&family=Slabo+27px&family=Tektur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<header>
+  <div>
+    <div>
+      <nav class="navbar navbar-expand-xl navbar-dark ">
+        <div class="container-fluid">
+          <h2 class="navbar-brand mt-1" style="font-family: 'Roboto Slab', serif;">Movie House</h2>
+          <button   class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span  class="navbar-toggler-icon"></span>
+          </button>
+            {% if user.is_authenticated %}
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'movie:homeall' %}">Home</a>
+              </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item  " href="{% url 'movie:home' %}"><span style="text-transform:capitalize; font-size:15px;">Movies</span></a></li>
+                        <li><a class="dropdown-item" href="{% url 'series:shome' %}"><span style="text-transform:capitalize; font-size:15px;">Series</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Language
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        {% for i in links %}
+                        <li><a class="dropdown-item " href="{% url 'movie:language' i.language %}"><span style="text-transform:capitalize; font-size:15px;">{{i.language}}</span></a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bookmark" style="color: #ffffff;"></i> Watchlist
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item  " href="{% url 'watch:Mwatchlist' %}"><span style="text-transform:capitalize; font-size:15px;">Movies</span></a></li>
+                        <li><a class="dropdown-item  " href="{% url 'watch:watchlist_view' %}"><span style="text-transform:capitalize; font-size:15px;">Series</span></a></li>
+                    </ul>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'movie:logout' %}">Log out</a>
+              </li>
+              <li class="nav-item  ms-2 ">
+                  <a class="nav-link active  ms-0 fs-5 " href="{% url 'watch:subscribe' %}" style="color:#61c467">Subscription</a>
+              </li>
+            </ul>
+            <form class="d-flex" method="POST" action="{% url 'search:searchresult' %}">
+                {% csrf_token %}
+              <input class="form-control me-2 " type="search"  name="q" placeholder="Search" aria-label="Search">
+              <button class="btn btn-danger search " type="submit">Search</button>
+            </form>
+            <div class="ms-2 pt-3 pe-2 ps-3 name ">
+            <p class="me-1 ms-2 " style="font-size:15px;text-transform:uppercase;color:white;"><i class="fa-regular fa-user " style="font-size:16px;color:white;"></i> {{user.username}}</p>
+            </div>
+                              {% endif %}
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>

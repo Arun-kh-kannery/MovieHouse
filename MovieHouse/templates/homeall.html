@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+  <div class="m-5">
+    <div class="m-3">
+      <h2 class="ms-3" style="font-family: 'Roboto Slab', serif; border-bottom:2px solid black;">Movies</h2>
+      <div class="row">
+                {% for i in m %}
+                <div class="col-sm-2 mt-1">
+                    <div class="card bg-info m-2">
+                        <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'movie:details' i.mname %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info ">Watch now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+      <h2 class="ms-3 mt-3" style="font-family: 'Roboto Slab', serif; border-bottom:2px solid black;">Series</h2>
+      <div class="row">
+                {% for i in s %}
+                <div class="col-sm-2 mt-1">
+                    <div class="card bg-info m-2">
+                        <img src="{{i.image.url}}" height="250px" width="250px" class="card-img-top" alt="...">
+                            <a href="{% url 'series:sdetails' i.id %}" style="font-family: 'Roboto Slab', serif;" class="btn btn-info ">Watch now</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
